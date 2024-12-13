@@ -45,7 +45,7 @@ public final class RobotFrameworkAction implements Action{
 		final List<ActionParameter> parameters = new ArrayList<ActionParameter>();
 
 		parameters.add(new ActionParameter(TEST_SOURCE, "${NL-CustomResources}/"));
-		parameters.add(new ActionParameter(OPTION_LISTENER, "${NL-CustomResources}/NeoLoadListener.py"));
+		parameters.add(new ActionParameter(OPTION_LISTENER, "${NL-CustomResources}/NeoLoadMonitoringListener.py"));
 		parameters.add(new ActionParameter("output directory", "<path to create output>"));
 		parameters.add(new ActionParameter(EXECUTION_TEST, "<name or simple pattern>"));
 		parameters.add(new ActionParameter("variable", "name:value"));
