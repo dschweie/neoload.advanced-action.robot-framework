@@ -6,7 +6,7 @@ from robot.libraries.BuiltIn import BuiltIn
 
 class NeoLoadRecordingListener:
   """!
-    @brief    listener with which one or more test cases can be recorded.
+    @brief    Listener with which one or more test cases can be recorded.
 
     Neoload is a load and performance testing tool and therefore works on the
     network protocol. By contrast, functional tests generally use actions on
@@ -21,6 +21,17 @@ class NeoLoadRecordingListener:
   ##  Specifications from the Robot Framework for identifying the type of listener
   ROBOT_LISTENER_API_VERSION = 2
 
+  ##
+  #   @brief      List of libraries for which no container is to be created.
+  #
+  #   The basic idea of the containers in NeoLoad is to structure the requests
+  #   in a script, which is definitely a sensible approach.
+  #
+  #   The lister uses the keywords to define meaningful names for the
+  #   containers. In a web application, requests are usually triggered in
+  #   connection with a click. As it makes little sense to always package the
+  #   requests in a container with the name “Click”, the libraries that are to
+  #   be ignored to form the container names can be configured in this list.
   rbt_frmwrk_ignore_libraries = ["Browser", "BuiltIn", "Collections", "DateTime", "Dialogs", "OperatingSystem", "Process", "Screenshot", "String", "Telnet", "XML"]
 
   ##
@@ -41,12 +52,20 @@ class NeoLoadRecordingListener:
   #   whether metrics can be sent.
   neoload_status = "UNDEFINED"
 
+  ##
+  #   @brief      A possible key for authentication can be stored here.
   neoload_api_key = ""
 
+  ##
+  #   @brief      In this attribute, the listener manages the data to be transferred to the service.
   neoload_data = { }
 
+  ##
+  #   @brief      In this attribute, the listener manages the name of the computer on which NeoLoad is running.
   neoload_host = "localhost"
 
+  ##
+  #   @brief      In this attribute, the listener manages the call hierarchy of the keywords.
   neoload_container_elements = []
 
   def __init__(self, host="localhost", port=7400, apikey="", logfile="listen.txt"):
