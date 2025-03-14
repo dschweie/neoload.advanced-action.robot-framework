@@ -35,3 +35,5 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "staging/*.jar,robot/listeners/*.py"
+          prerelease: true
+          tag: "0.1.1"
