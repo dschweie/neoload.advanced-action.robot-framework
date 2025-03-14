@@ -1,4 +1,4 @@
-name: Create a package
+name: Create a Release
 on:
   workflow_dispatch:
     inputs:
