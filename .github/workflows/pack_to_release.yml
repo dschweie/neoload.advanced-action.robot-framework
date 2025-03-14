@@ -37,3 +37,4 @@ jobs:
           artifacts: "staging/*.jar,robot/listeners/*.py"
           prerelease: true
           tag: "0.1.1"
+          token: ${{ secrets.TOKEN }}
