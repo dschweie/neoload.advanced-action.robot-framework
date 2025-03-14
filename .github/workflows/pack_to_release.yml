@@ -34,7 +34,8 @@ jobs:
           path: staging        
       - uses: ncipollo/release-action@v1
         with:
-          artifacts: "staging/*.jar,robot/listeners/*.py"
+          artifacts: "staging/*.jar,robot/listener/*.py"
           prerelease: true
-          tag: "0.1.1"
+          tag: "v0.1.1"
+          replacesArtifacts: true
           token: ${{ secrets.TOKEN }}
