@@ -25,7 +25,7 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
       - run: mvn --batch-mode --update-snapshots verify
-      - run: mkdir staging && cp target/advanced-action-robot-framework-?.?.?.jar staging
+      - run: mkdir staging && cp target/advanced-action-robot-framework-*.jar staging
       - uses: actions/upload-artifact@v4
         with:
           name: Package
@@ -33,7 +33,7 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           tag: "v0.1.1"
-          artifacts: "staging/*.jar,robot/listener/*.py"
+          artifacts: "staging/advanced-action-robot-framework-*.jar,robot/listener/*.py"
           prerelease: true
           allowUpdates: true
           replacesArtifacts: true
