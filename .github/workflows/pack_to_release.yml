@@ -31,4 +31,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: Package
-          path: staging          
+          path: staging        
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "staging/*.jar,robot/listeners/*.py"
