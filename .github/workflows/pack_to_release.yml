@@ -1,7 +1,5 @@
 name: Create a package
 on:
-  release:
-    types: [created]
   workflow_dispatch:
     inputs:
       logLevel:
@@ -27,7 +25,7 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
       - run: mvn --batch-mode --update-snapshots verify
-      - run: mkdir staging && cp target/*.jar staging
+      - run: mkdir staging && cp target/advanced-*.jar staging
       - uses: actions/upload-artifact@v4
         with:
           name: Package
